@@ -5,14 +5,16 @@ module.exports = {
         './components/**/*.{js,ts,jsx,tsx}',
     ],
     theme: {
-        colors: {
-            linkblue: '#1070e1d9',
-            ashgray: '#58667E',
-            buttonblue: '#3861FB',
-            buttonbluehover: '#3359E7',
-            subscribebg: '#F8FAFD',
+        extend: {
+            colors: {
+                linkblue: '#1070e1d9',
+                ashgray: '#58667E',
+                buttonblue: '#3861FB',
+                buttonbluehover: '#3359E7',
+                subscribebg: '#F8FAFD',
+                hrcolor: '#EFF2F5',
+            },
         },
-        extend: {},
     },
     plugins: [],
 }
