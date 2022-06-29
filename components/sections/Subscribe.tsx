@@ -4,7 +4,7 @@ type Props = {}
 
 const Subscribe = (props: Props) => {
     return (
-        <div className="flex flex-col md:flex-row md:gap:55px md:mb-[70px] bg-subscribebg ">
+        <div className="flex flex-col md:flex-row md:gap:55px md:mb-[70px] bg-subscribebg mt-[250px] ">
             <div className="flex-1 px-[25px] ">
                 <span className="text-[22px] md:text-[34px]  ">
                     Be the first to know about

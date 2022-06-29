@@ -14,6 +14,11 @@ module.exports = {
                 subscribebg: '#F8FAFD',
                 hrcolor: '#EFF2F5',
             },
+
+            screens: {
+                max1280: { max: '1279px' },
+                max_sm: { max: '640px' },
+            },
         },
     },
     plugins: [],

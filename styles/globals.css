@@ -18,3 +18,11 @@ a {
 * {
     box-sizing: border-box;
 }
+
+.novscroll {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+}
+.novscroll::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+}

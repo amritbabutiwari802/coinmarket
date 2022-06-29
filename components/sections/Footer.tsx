@@ -4,7 +4,7 @@ type Props = {}
 
 const Footer = (props: Props) => {
     return (
-        <div className="w-[100%] px-[4%] ">
+        <div className="w-[100%] px-[4%] mt-[100px]  ">
             <div className="flex flex-col">
                 <div>
                     <img
