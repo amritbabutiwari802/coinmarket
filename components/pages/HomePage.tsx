@@ -1,5 +1,6 @@
 import * as React from 'react'
 import News from '../compo/News'
+import Table_one from '../compo/Table_one'
 import TrendingCard from '../compo/TrendingCard'
 import CardView from '../sections/CardView'
 import Footer from '../sections/Footer'
@@ -11,16 +12,20 @@ interface IAppProps {}
 
 const App: React.FunctionComponent<IAppProps> = (props) => {
     return (
-        <div className=" pb-[25px]">
-            <NavBar />
-            <CardView />
-            <News />
+        <div className="flex flex-col">
+            <div className=" pb-[25px] max-w-[1402px] self-center">
+                <NavBar />
+                <CardView />
+                <News />
 
-            <HotCards />
+                <HotCards />
 
-            <Subscribe />
+                <Table_one />
 
-            <Footer />
+                <Subscribe />
+
+                <Footer />
+            </div>
         </div>
     )
 }
