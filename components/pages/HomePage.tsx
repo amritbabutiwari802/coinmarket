@@ -23,20 +23,22 @@ const App: React.FunctionComponent<IAppProps> = (props) => {
     }, [])
 
     return (
-        <div className=" pb-[25px]">
-            <NavBar />
-            <CardView />
-            <News />
+        <div className=" flex flex-col items-center ">
+            <div className=" max-w-[1400px] pb-[25px]">
+                <NavBar />
+                <CardView />
+                <News />
 
-            {ismd && <HotCards />}
+                {ismd && <HotCards />}
 
-            <Filter />
+                <Filter />
 
-            <Table_one />
+                <Table_one />
 
-            <Subscribe />
+                <Subscribe />
 
-            <Footer />
+                <Footer />
+            </div>
         </div>
     )
 }
