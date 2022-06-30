@@ -5,30 +5,45 @@ type Props = {}
 
 const Table_one = (props: Props) => {
     return (
-        <div>
-            <table className="w-[100%] text-right">
+        <div className="px-[25px] mt-[10px] overflow-x-scroll  novscroll ">
+            <table className="w-[100%] text-right  whitespace-nowrap ">
                 <thead className="text-sm h-[47px] font-bold border-solid border-y-[1px] border-slate-200">
-                    <th className="w-[31px] px-[10px]"></th>
-                    <th className="flex justify-end px-[10px] w-[51px] h-[47px] flex items-center">
-                        # <ChevaronUp className="w-[19px] h-[19px]" />
-                    </th>
-                    <th className="text-left px-[10px] md:w-[216px]">Name</th>
-                    <th className="md:w-[89px] px-[10px]">Price</th>
-                    <th className="md:w-[85px] px-[10px]">24h%</th>
-                    <th className="md:w-[84px] px-[10px]">7h%</th>
-                    <th className="md:w-[157px] px-[10px]">Market Cap</th>
-                    <th className="md:w-[154px] px-[10px]">Volume [24h]</th>
-                    <th className="md:w-[229px] px-[10px]">
-                        Circulating Supply
-                    </th>
-                    <th className="w-[184px] px-[10px]">Last 7 Days</th>
+                    <tr className="relative">
+                        {' '}
+                        <th className="w-[31px] px-[10px] sticky z-[100] ml-[40px] "></th>
+                        <th className="flex justify-end px-[10px] relative w-[51px] h-[47px] flex items-center">
+                            # <ChevaronUp className="w-[19px] h-[19px]" />
+                        </th>
+                        <th className="text-left px-[10px] md:w-[216px] relative ">
+                            Name
+                        </th>
+                        <th className="md:w-[89px] px-[10px] relative ">
+                            Price
+                        </th>
+                        <th className="md:w-[85px] px-[10px] relative ">
+                            24h%
+                        </th>
+                        <th className="md:w-[84px] px-[10px] relative ">7h%</th>
+                        <th className="md:w-[157px] px-[10px] relative ">
+                            Market Cap
+                        </th>
+                        <th className="md:w-[154px] px-[10px] relative ">
+                            Volume [24h]
+                        </th>
+                        <th className="md:w-[229px] px-[10px] relative ">
+                            Circulating Supply
+                        </th>
+                        <th className="w-[184px] px-[10px] relative ">
+                            Last 7 Days
+                        </th>
+                    </tr>
                 </thead>
                 <tbody>
                     {data.map((value: any, index: number) => (
-                        <tr className="text-sm font-bold h-[79px] px-[10px] border-solid border-b-[1px] border-slate-200">
-                            <td>
+                        <tr className="text-sm font-bold h-[79px] px-[10px] border-solid border-b-[1px] border-slate-200 relative ">
+                            <td className=" sticky z-[100] ml-[40px]">
                                 {' '}
-                                <Star className="h-[20px] w-[12px]" />{' '}
+                                <Star className="h-[20px] w-[12px] sticky z-[100] left-10 " />{' '}
                             </td>
                             <td className=" w-[51px] px-[10px]">
                                 <div className="text-left w-[51px]  ">

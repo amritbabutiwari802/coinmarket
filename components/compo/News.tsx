@@ -11,7 +11,7 @@ const News = (props: Props) => {
                 </h1>
                 <div className="text-ashgray hidden md:inline">Highlights </div>
             </div>
-            <p className="text-ashgray px-[25px] text-sm font-bold ">
+            <p className="text-ashgray px-[25px] text-sm font-semibold ">
                 The global crypto market cap is $902.50B, a{' '}
                 <span className="text-red-500"> 3.60%</span> decrease over the
                 last day.{' '}

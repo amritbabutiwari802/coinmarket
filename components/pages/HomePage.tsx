@@ -1,4 +1,5 @@
 import * as React from 'react'
+import Filter from '../compo/Filter'
 import News from '../compo/News'
 import Table_one from '../compo/Table_one'
 import TrendingCard from '../compo/TrendingCard'
@@ -11,21 +12,31 @@ import Subscribe from '../sections/Subscribe'
 interface IAppProps {}
 
 const App: React.FunctionComponent<IAppProps> = (props) => {
+    const [ismd, setmd] = React.useState(false)
+
+    React.useEffect(() => {
+        if (typeof window !== 'undefined') {
+            if (window.innerWidth > 767) {
+                setmd(true)
+            }
+        }
+    }, [])
+
     return (
-        <div className="flex flex-col">
-            <div className=" pb-[25px] max-w-[1402px] self-center">
-                <NavBar />
-                <CardView />
-                <News />
+        <div className=" pb-[25px]">
+            <NavBar />
+            <CardView />
+            <News />
 
-                <HotCards />
+            {ismd && <HotCards />}
 
-                <Table_one />
+            <Filter />
 
-                <Subscribe />
+            <Table_one />
 
-                <Footer />
-            </div>
+            <Subscribe />
+
+            <Footer />
         </div>
     )
 }

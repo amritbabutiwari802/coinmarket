@@ -4,8 +4,8 @@ type Props = {}
 
 const Footer = (props: Props) => {
     return (
-        <div className="w-[100%] px-[4%] mt-[100px]  ">
-            <div className="flex flex-col">
+        <div className=" px-[4%] mt-[100px]  ">
+            <div className="flex flex-col lg:flex-row lg:justify-between w-[100%]">
                 <div>
                     <img
                         src="https://s2.coinmarketcap.com/static/cloud/img/coinmarketcap_1.svg?_=224f5ba"
@@ -51,7 +51,7 @@ export default Footer
 
 const FooterItem = (props: any) => {
     return (
-        <div className="mt-[55px]">
+        <div className="mt-[55px] lg:mt-[0px] ">
             <span className="font-bold text-[17px]">{props.data.heading}</span>
             <ul className=" flex flex-col ">
                 {props.data.items.map((value: any, index: number) => (
