@@ -23,7 +23,7 @@ const App: React.FunctionComponent<IAppProps> = (props) => {
     }, [])
 
     return (
-        <div className=" flex flex-col items-center ">
+        <div className=" xl:flex xl:flex-col xl:items-center ">
             <div className=" max-w-[1400px] pb-[25px]">
                 <NavBar />
                 <CardView />

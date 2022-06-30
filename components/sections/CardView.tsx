@@ -9,7 +9,7 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
 import { Scrollbar } from 'swiper'
-import { ArrowLeft } from '../compo/Icons'
+import { ArrowLeft, ArrowRight } from '../compo/Icons'
 
 type Props = {}
 
@@ -18,34 +18,60 @@ const CardView = (props: Props) => {
     const [leftScroll, setLeftScroll] = React.useState(false)
     const [rightScroll, setRightScroll] = React.useState(true)
 
-    return (
-        <div
-            ref={cardRef}
-            onScroll={() => {
-                if (cardRef.current.scrollLeft == 0) {
-                    setLeftScroll(false)
-                } else {
-                    setLeftScroll(true)
-                }
+    useEffect(() => {
+        if (cardRef.current.scrollLeft > 0) {
+            setLeftScroll(true)
+        }
+    }, [cardRef?.current?.scrollLeft])
 
-                if (cardRef.current.scrollWidth == cardRef.current.scrollLeft) {
-                    setRightScroll(false)
-                } else {
-                    setRightScroll(true)
-                }
-            }}
-            onClick={(e) => {
-                cardRef.current.scrollLeft += 500
-            }}
-            className="relative w-[100%] px-[10px] mb-[25px] mt-[25px] flex gap-[10px] scroll-smooth overflow-x-scroll  novscroll"
-        >
-            {data.map((value: any, index: number) => {
-                return <Cardx datax={value} />
-            })}
+    return (
+        <div className="relative">
+            <div
+                ref={cardRef}
+                onScroll={() => {
+                    if (cardRef.current.scrollLeft == 0) {
+                        setLeftScroll(false)
+                    } else {
+                        setLeftScroll(true)
+                    }
+                    console.log(cardRef.current.scrollWidth)
+                    console.log(cardRef.current.scrollLeft)
+                    if (
+                        cardRef.current.scrollWidth ==
+                        cardRef.current.scrollLeft + cardRef.current.clientWidth
+                    ) {
+                        setRightScroll(false)
+                    } else {
+                        setRightScroll(true)
+                    }
+                }}
+                className="relative w-[100%] px-[10px] mb-[25px] mt-[25px] flex gap-[10px] scroll-smooth overflow-x-scroll  novscroll"
+            >
+                {data.map((value: any, index: number) => {
+                    return <Cardx datax={value} />
+                })}
+            </div>
+
             {leftScroll && (
-                <div className="absolute top-[0px] left-[0px] h-[100%] w-[100px] flex justify-center items-center z-[100] ">
-                    <button>
-                        <ArrowLeft className="w-[24px] h-[24px] fill-slate-400" />
+                <div className="absolute top-[0px] left-[0px] h-[100%] w-[100px] flex pl-[25px] items-center z-[100] bg-gradient-to-r from-whitegd1 to-whitegd0  ">
+                    <button
+                        className="z-200"
+                        onClick={() => {
+                            cardRef.current.scrollLeft -= 500
+                        }}
+                    >
+                        <ArrowLeft className="w-[24px] h-[24px] fill-slate-700" />
+                    </button>
+                </div>
+            )}
+            {rightScroll && (
+                <div className="absolute top-[0px] right-[0px] h-[100%] w-[100px] flex justify-end pr-[25px] items-center z-[100] bg-gradient-to-l from-whitegd1 to-whitegd0 ">
+                    <button
+                        onClick={() => {
+                            cardRef.current.scrollLeft += 500
+                        }}
+                    >
+                        <ArrowRight className="w-[24px] h-[24px] fill-slate-700" />
                     </button>
                 </div>
             )}

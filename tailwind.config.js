@@ -13,6 +13,8 @@ module.exports = {
                 buttonbluehover: '#3359E7',
                 subscribebg: '#F8FAFD',
                 hrcolor: '#EFF2F5',
+                whitegd1: '#ffffffff',
+                whitegd0: '#ffffff00',
             },
 
             screens: {
