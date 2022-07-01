@@ -20,6 +20,8 @@ module.exports = {
             screens: {
                 max1280: { max: '1279px' },
                 max_sm: { max: '640px' },
+                max_md: { max: '1024px' },
+                max_sm: { max: '768px' },
             },
         },
     },
