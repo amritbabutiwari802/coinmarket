@@ -2,8 +2,11 @@ import React, { useState } from 'react'
 import { Chart, ChevaronDown, HSlider, Star, Table_X } from './Icons'
 import { Menu } from '@headlessui/react'
 import { Popover } from '@headlessui/react'
+import { useRouter } from 'next/router'
 
-type Props = {}
+type Props = {
+    param: any
+}
 
 const Filter = (props: Props) => {
     return (
@@ -27,14 +30,15 @@ const Filter = (props: Props) => {
             </div>
             <div className="h-[16px] w-[1px] self-center bg-slate-400" />
             <div className="flex">
-                <FilterItem name="CryptoCurriencies" selected={true} />
-                <FilterItem name="first" selected={false} />
-                <FilterItem name="CryptoCurriencies" selected={false} />
-                <FilterItem name="first" selected={false} />
-                <FilterItem name="CryptoCurriencies" selected={false} />
-                <FilterItem name="first" selected={false} />
-                <FilterItem name="CryptoCurriencies" selected={false} />
-                <FilterItem name="first" selected={false} />
+                {Filterkeys.map((value: string, index: number) => (
+                    <span>
+                        {' '}
+                        <FilterItem
+                            name={value}
+                            selected={value == props.param ? true : false}
+                        />
+                    </span>
+                ))}
             </div>
             <div>
                 <RowItems />
@@ -47,8 +51,15 @@ const Filter = (props: Props) => {
 export default Filter
 
 const FilterItem = (props: any) => {
+    const router = useRouter()
     return (
-        <a>
+        <a
+            onClick={() => {
+                props.name == 'CryptoCurriencies'
+                    ? router.push('/')
+                    : router.push('/views/' + props.name)
+            }}
+        >
             {' '}
             <button
                 className={
@@ -122,3 +133,15 @@ const CustomizeButton = () => (
         <p className="text-sm font-bold">Customize</p>{' '}
     </button>
 )
+
+const Filterkeys = [
+    'CryptoCurriencies',
+    'Categories',
+    'Defi',
+    'NFT',
+    'Metaverse',
+    'Polkadots',
+    'BnBChain',
+    'Sonola',
+    'Avalanche',
+]

@@ -2,7 +2,7 @@ import React from 'react'
 
 type Props = {}
 
-const MobileNavbar = (props: Props) => {
+const MobileNavbar = (props: any) => {
     return (
         <div className="px-[25px]">
             <div className="flex justify-between items-center h-[40px] mt-[25px]">
@@ -12,6 +12,9 @@ const MobileNavbar = (props: Props) => {
                 />
 
                 <svg
+                    onClick={() => {
+                        props.closeNav()
+                    }}
                     xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
                     height="24px"

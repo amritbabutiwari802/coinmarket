@@ -1,8 +1,9 @@
-import * as React from 'react'
+import React from 'react'
 import Filter from '../compo/Filter'
 import News from '../compo/News'
-import Paginate from '../compo/Paginate'
+import PaginatedItems from '../compo/Paginate'
 import Table_one from '../compo/Table_one'
+import TMarketCap from '../compo/TMarketCap'
 import TrendingCard from '../compo/TrendingCard'
 import CardView from '../sections/CardView'
 import Footer from '../sections/Footer'
@@ -10,9 +11,9 @@ import HotCards from '../sections/HotCards'
 import NavBar from '../sections/NavBar'
 import Subscribe from '../sections/Subscribe'
 
-interface IAppProps {}
+type Props = {}
 
-const App: React.FunctionComponent<IAppProps> = (props) => {
+const ViewPage = (props: any) => {
     const [ismd, setmd] = React.useState(false)
 
     React.useEffect(() => {
@@ -26,16 +27,12 @@ const App: React.FunctionComponent<IAppProps> = (props) => {
     return (
         <div className=" 2xl:flex 2xl:flex-col 2xl:items-center ">
             <div className=" xl:max-w-[1400px] pb-[25px]">
-                <NavBar param="CryptoCurriencies" />
-                <CardView />
-                <News />
-
-                {ismd && <HotCards />}
-
-                <Filter param="CryptoCurriencies" />
+                <NavBar param={props.param} />
+                <TMarketCap tokenname={props.param + ' Ecosystem Token'} />
+                <Filter param={props.param} />
 
                 <Table_one />
-                <Paginate />
+                <PaginatedItems />
 
                 <Subscribe />
 
@@ -45,4 +42,4 @@ const App: React.FunctionComponent<IAppProps> = (props) => {
     )
 }
 
-export default App
+export default ViewPage

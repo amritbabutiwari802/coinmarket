@@ -12,7 +12,7 @@ const Footer = (props: Props) => {
                         className="w-[239px] h-[32px]"
                     />
                 </div>
-                <div className="grid  grid-cols-2 md:grid-cols-4">
+                <div className="grid  grid-cols-2 md:grid-cols-4 gap-x-[25px]">
                     <FooterItem data={data.product} />
                     <FooterItem data={data.company} />
                     <FooterItem data={data.support} />
