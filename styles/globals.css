@@ -26,3 +26,8 @@ a {
 .novscroll::-webkit-scrollbar {
     display: none; /* Safari and Chrome */
 }
+
+.tableone_head {
+    position: sticky;
+    top: 0px;
+}
