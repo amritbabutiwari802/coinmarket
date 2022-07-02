@@ -25,10 +25,10 @@ const MobileNavbar = (props: any) => {
                     <path
                         d="M18 6L6 18M18 18L6 6"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-miterlimit="10"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeMiterlimit="10"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                     ></path>
                 </svg>
             </div>
@@ -36,7 +36,7 @@ const MobileNavbar = (props: any) => {
             <div>
                 {data.map((value: any, dx: number) => {
                     return (
-                        <div>
+                        <div key={dx}>
                             <div className="flex justify-between items-center h-[48px]">
                                 <h4 className="text-[16px] font-bold font-sans cursor-pointer ">
                                     {value.name}
@@ -53,10 +53,10 @@ const MobileNavbar = (props: any) => {
                                         <path
                                             d="M6 9L12 15L18 9"
                                             stroke="currentColor"
-                                            stroke-width="2"
-                                            stroke-miterlimit="10"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
+                                            strokeWidth="2"
+                                            strokeMiterlimit="10"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
                                         ></path>
                                         <svg></svg>
                                     </svg>

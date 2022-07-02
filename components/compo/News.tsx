@@ -7,7 +7,7 @@ const News = (props: Props) => {
         <div>
             <div className="flex justify-between px-[25px] ">
                 <h1 className="text-[25px] font-bold ">
-                    Today's Cryptocurrency Prices by Market Cap
+                    Today{"'"}s Cryptocurrency Prices by Market Cap
                 </h1>
                 <div className="text-ashgray hidden md:inline">Highlights </div>
             </div>

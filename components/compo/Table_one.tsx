@@ -40,7 +40,10 @@ const Table_one = (props: Props) => {
                 </thead>
                 <tbody>
                     {data.map((value: any, index: number) => (
-                        <tr className="text-sm font-bold h-[79px] px-[10px] border-solid border-b-[1px] border-slate-200 relative ">
+                        <tr
+                            key={value.name.src + index}
+                            className="text-sm font-bold h-[79px] px-[10px] border-solid border-b-[1px] border-slate-200 relative "
+                        >
                             <td className=" ">
                                 {' '}
                                 <Star className="h-[20px] w-[12px] sticky z-[100] left-10 " />{' '}

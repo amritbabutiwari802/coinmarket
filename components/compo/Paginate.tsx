@@ -28,7 +28,7 @@ const Paginate = (props: any) => {
         } else {
             setmode(7)
         }
-    }, [current])
+    }, [current, end, start])
 
     function setCurrentValue(item: number) {
         setCurrent(item)

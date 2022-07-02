@@ -27,7 +27,10 @@ const TrendingCard = (props: Props) => {
 
             {data.map((value: any, index: number) => {
                 return (
-                    <div className="flex justify-between mt-[16px] pl-[10px] ">
+                    <div
+                        key={value.name + index}
+                        className="flex justify-between mt-[16px] pl-[10px] "
+                    >
                         <div className="flex gap-[14px] items-center  ">
                             <p className="text-ashgray text-sm self-center">
                                 {index + 1}

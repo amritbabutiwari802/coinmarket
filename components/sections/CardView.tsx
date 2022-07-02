@@ -48,7 +48,7 @@ const CardView = (props: Props) => {
                 className="relative w-[100%] px-[10px] mb-[25px] mt-[25px] flex gap-[10px] scroll-smooth overflow-x-scroll  novscroll"
             >
                 {data.map((value: any, index: number) => {
-                    return <Cardx datax={value} />
+                    return <Cardx datax={value} key={index} />
                 })}
             </div>
 

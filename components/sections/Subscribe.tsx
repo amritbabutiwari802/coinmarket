@@ -15,7 +15,7 @@ const Subscribe = (props: Props) => {
                 </span>
                 <p className="text-ashgray my-[25px]">
                     Get crypto analysis, news and updates risght to your inbox!
-                    Sign up here so you don't miss a single newsletter.
+                    Sign up here so you don{"'"}t miss a single newsletter.
                 </p>
                 <div>
                     <button className="px-[10px] bg-buttonblue hover:buttonbluehover w-[100%] md:w-[148px] mb-[25px] h-[48px] rounded-md font-bold text-[#FFFFFF] ">

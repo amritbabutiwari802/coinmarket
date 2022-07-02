@@ -90,9 +90,9 @@ const Table_X = (props: any) => (
         fill="currentColor"
     >
         <path
-            fill-rule="evenodd"
+            fillRule="evenodd"
             d="M5 4a3 3 0 00-3 3v6a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H5zm-1 9v-1h5v2H5a1 1 0 01-1-1zm7 1h4a1 1 0 001-1v-1h-5v2zm0-4h5V8h-5v2zM9 8H4v2h5V8z"
-            clip-rule="evenodd"
+            clipRule="evenodd"
         />
     </svg>
 )
@@ -105,9 +105,9 @@ const ArrowLeft = (props: any) => (
         fill="currentColor"
     >
         <path
-            fill-rule="evenodd"
+            fillRule="evenodd"
             d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z"
-            clip-rule="evenodd"
+            clipRule="evenodd"
         />
     </svg>
 )

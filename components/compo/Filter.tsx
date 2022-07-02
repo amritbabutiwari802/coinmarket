@@ -31,7 +31,7 @@ const Filter = (props: Props) => {
             <div className="h-[16px] w-[1px] self-center bg-slate-400" />
             <div className="flex">
                 {Filterkeys.map((value: string, index: number) => (
-                    <span>
+                    <span key={value + index}>
                         {' '}
                         <FilterItem
                             name={value}
