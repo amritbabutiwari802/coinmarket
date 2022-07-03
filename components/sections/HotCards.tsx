@@ -1,8 +1,8 @@
 import React from 'react'
-import TrendingCard from '../compo/TrendingCard'
+import TrendingCard from '../component/TrendingCard'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
-import News from '../compo/TrendingSlider/News'
+import News from '../component/TrendingSlider/News'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
