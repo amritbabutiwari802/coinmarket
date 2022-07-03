@@ -3,6 +3,7 @@ import { Chart, ChevaronDown, HSlider, Star, Table_X } from './Icons'
 import { Menu } from '@headlessui/react'
 import { Popover } from '@headlessui/react'
 import { useRouter } from 'next/router'
+import { Listbox } from '@headlessui/react'
 
 type Props = {
     param: any
@@ -95,11 +96,12 @@ const FilterWl = (props: any) => {
 
 const RowItems = (props: any) => {
     const [rows, setRows] = useState(100)
+    const [selectedPerson, setSelectedPerson] = useState(people[0])
 
     return (
         <div className="flex items-center gap-[7px]">
             <p className="text-xs font-semibold whitespace-nowrap">Show rows</p>
-            <Popover className="relative">
+            {/* <Popover className="relative">
                 <Popover.Button className="flex text-xs font-extrabold h-[31px] gap-[4px] items-center bg-gray-100 px-[7px] rounded-lg ">
                     {rows} <ChevaronDown className="h-[14px] w-[14px]" />{' '}
                 </Popover.Button>
@@ -113,7 +115,21 @@ const RowItems = (props: any) => {
 
                     <img src="/solutions.jpg" alt="" />
                 </Popover.Panel>
-            </Popover>
+            </Popover> */}
+            <Listbox value={selectedPerson} onChange={setSelectedPerson}>
+                <Listbox.Button>{selectedPerson.name}</Listbox.Button>
+                <Listbox.Options>
+                    {people.map((person) => (
+                        <Listbox.Option
+                            key={person.id}
+                            value={person}
+                            disabled={person.unavailable}
+                        >
+                            {person.name}
+                        </Listbox.Option>
+                    ))}
+                </Listbox.Options>
+            </Listbox>
         </div>
     )
 }
@@ -144,4 +160,12 @@ const Filterkeys = [
     'BnBChain',
     'Sonola',
     'Avalanche',
+]
+
+const people = [
+    { id: 1, name: 'Durward Reynolds', unavailable: false },
+    { id: 2, name: 'Kenton Towne', unavailable: false },
+    { id: 3, name: 'Therese Wunsch', unavailable: false },
+    { id: 4, name: 'Benedict Kessler', unavailable: true },
+    { id: 5, name: 'Katelyn Rohan', unavailable: false },
 ]
