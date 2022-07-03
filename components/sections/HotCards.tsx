@@ -12,7 +12,7 @@ type Props = {}
 
 const HotCards = (props: Props) => {
     return (
-        <div className="flex gap-[10px] mt-[25px] px-[25px] ">
+        <div className=" max_md:grid max_md:grid-cols-2 lg:flex gap-[10px] mt-[25px] px-[25px] ">
             <TrendingCard name="Trending News" />
             <TrendingCard name="Trending News" />
             <Swiper

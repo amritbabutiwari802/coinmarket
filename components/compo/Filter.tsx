@@ -104,7 +104,7 @@ const RowItems = (props: any) => {
                     {rows} <ChevaronDown className="h-[14px] w-[14px]" />{' '}
                 </Popover.Button>
 
-                <Popover.Panel className="absolute opacity-100 bg-white z-40 px-[25px] shadow-2xl ">
+                <Popover.Panel className="absolute opacity-100 bg-white z-10 px-[25px] shadow-2xl ">
                     <div className="flex flex-col gap-[20px] text-base font-semibold py-[20px] ">
                         <a href="/analytics">100</a>
                         <a href="/engagement">50</a>
