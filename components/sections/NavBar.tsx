@@ -187,10 +187,7 @@ const Navbar = (props: any) => {
             )}
 
             {ismobile && (
-                <div
-                    className="flex justify-self-end gap-[25px] "
-                    onClick={props.setmobileopen}
-                >
+                <div className="flex justify-self-end gap-[25px] ">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -228,6 +225,7 @@ const Navbar = (props: any) => {
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                         strokeWidth="2"
+                        onClick={props.setmobileopen}
                     >
                         <path
                             strokeLinecap="round"
