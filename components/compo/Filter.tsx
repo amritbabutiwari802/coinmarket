@@ -116,20 +116,15 @@ const RowItems = (props: any) => {
                     <img src="/solutions.jpg" alt="" />
                 </Popover.Panel>
             </Popover> */}
-            <Listbox value={selectedPerson} onChange={setSelectedPerson}>
-                <Listbox.Button>{selectedPerson.name}</Listbox.Button>
-                <Listbox.Options>
-                    {people.map((person) => (
-                        <Listbox.Option
-                            key={person.id}
-                            value={person}
-                            disabled={person.unavailable}
-                        >
-                            {person.name}
-                        </Listbox.Option>
-                    ))}
-                </Listbox.Options>
-            </Listbox>
+            <select
+                name="rows"
+                id="rows"
+                className="flex text-xs font-extrabold h-[31px] gap-[4px] items-center bg-gray-100 px-[7px] rounded-lg "
+            >
+                <option value="100">100</option>
+                <option value="50">50</option>
+                <option value="20">20</option>
+            </select>
         </div>
     )
 }

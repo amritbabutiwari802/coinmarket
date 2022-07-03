@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useDebugValue, useState } from 'react'
 
 type Props = {}
 
@@ -35,36 +35,7 @@ const MobileNavbar = (props: any) => {
             <div className="w-[100%] h-[1px] bg-gray-200 mt-[25px]" />
             <div>
                 {data.map((value: any, dx: number) => {
-                    return (
-                        <div key={dx}>
-                            <div className="flex justify-between items-center h-[48px]">
-                                <h4 className="text-[16px] font-bold font-sans cursor-pointer ">
-                                    {value.name}
-                                </h4>
-                                {value.type == 'dropdown' && (
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        height="22"
-                                        width="22"
-                                        viewBox="0 0 24 24"
-                                        className="sc-1pyr0bh-0 kRnyud"
-                                    >
-                                        <path
-                                            d="M6 9L12 15L18 9"
-                                            stroke="currentColor"
-                                            strokeWidth="2"
-                                            strokeMiterlimit="10"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                        ></path>
-                                        <svg></svg>
-                                    </svg>
-                                )}
-                            </div>
-                            <div className="w-[100%] h-[1px] bg-hrcolor" />
-                        </div>
-                    )
+                    return <NavItem key={value.name + dx} value={value} />
                 })}
             </div>
 
@@ -114,37 +85,199 @@ const MobileNavbar = (props: any) => {
 
 export default MobileNavbar
 
+const NavItem = (props: any) => {
+    const [open, setopen] = useState(false)
+
+    return (
+        <div
+            onClick={() => {
+                setopen(!open)
+            }}
+        >
+            <div className="flex justify-between items-center h-[48px]">
+                <h4 className="text-[16px] font-bold font-sans cursor-pointer ">
+                    {props.value.name}
+                </h4>
+                {props.value.type == 'dropdown' && (
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        height="22"
+                        width="22"
+                        viewBox="0 0 24 24"
+                        className="sc-1pyr0bh-0 kRnyud"
+                    >
+                        <path
+                            d="M6 9L12 15L18 9"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeMiterlimit="10"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                        ></path>
+                        <svg></svg>
+                    </svg>
+                )}
+            </div>
+
+            {open && props.value.type == 'dropdown' && (
+                <div className="flex flex-col  " data-aos="fade-down">
+                    {props.value.items.map((value: any, index: any) => (
+                        <a
+                            onClick={(e) => {
+                                e.stopPropagation()
+                                alert(1)
+                            }}
+                            className="flex items-center gap-[10px] py-[7px] text-base font-semibold cursor-pointer "
+                        >
+                            <img
+                                src={value.src}
+                                className="w-[27px] h-[28px]"
+                            />{' '}
+                            {value.label}
+                        </a>
+                    ))}
+                </div>
+            )}
+
+            <div className="w-[100%] h-[1px] bg-hrcolor" />
+        </div>
+    )
+}
+
 const data = [
     {
         name: 'Cryptocurriencies',
         type: 'dropdown',
-        items: ['Home', 'office', 'park', 'Family'],
+        items: [
+            {
+                src: 'https://s2.coinmarketcap.com/static/cloud/img/menu/MenuCmcIcon.svg',
+                label: 'Home',
+            },
+            {
+                src: 'https://s2.coinmarketcap.com/static/cloud/img/menu/MenuCmcIcon.svg',
+                label: 'Home',
+            },
+            {
+                src: 'https://s2.coinmarketcap.com/static/cloud/img/menu/MenuCmcIcon.svg',
+                label: 'Home',
+            },
+            {
+                src: 'https://s2.coinmarketcap.com/static/cloud/img/menu/MenuCmcIcon.svg',
+                label: 'Home',
+            },
+        ],
     },
     {
         name: 'Central Bank',
         type: 'dropdown',
-        items: ['Home', 'office', 'park', 'Family'],
+        items: [
+            {
+                src: 'https://s2.coinmarketcap.com/static/cloud/img/menu/MenuCmcIcon.svg',
+                label: 'Home',
+            },
+            {
+                src: 'https://s2.coinmarketcap.com/static/cloud/img/menu/MenuCmcIcon.svg',
+                label: 'Home',
+            },
+            {
+                src: 'https://s2.coinmarketcap.com/static/cloud/img/menu/MenuCmcIcon.svg',
+                label: 'Home',
+            },
+            {
+                src: 'https://s2.coinmarketcap.com/static/cloud/img/menu/MenuCmcIcon.svg',
+                label: 'Home',
+            },
+        ],
     },
     {
         name: 'About Us',
         type: 'dropdown',
-        items: ['Home', 'office', 'park', 'Family'],
+        items: [
+            {
+                src: 'https://s2.coinmarketcap.com/static/cloud/img/menu/MenuCmcIcon.svg',
+                label: 'Home',
+            },
+            {
+                src: 'https://s2.coinmarketcap.com/static/cloud/img/menu/MenuCmcIcon.svg',
+                label: 'Home',
+            },
+            {
+                src: 'https://s2.coinmarketcap.com/static/cloud/img/menu/MenuCmcIcon.svg',
+                label: 'Home',
+            },
+            {
+                src: 'https://s2.coinmarketcap.com/static/cloud/img/menu/MenuCmcIcon.svg',
+                label: 'Home',
+            },
+        ],
     },
     {
         name: 'Offices',
         type: 'dropdown',
-        items: ['Home', 'office', 'park', 'Family'],
+        items: [
+            {
+                src: 'https://s2.coinmarketcap.com/static/cloud/img/menu/MenuCmcIcon.svg',
+                label: 'Home',
+            },
+            {
+                src: 'https://s2.coinmarketcap.com/static/cloud/img/menu/MenuCmcIcon.svg',
+                label: 'Home',
+            },
+            {
+                src: 'https://s2.coinmarketcap.com/static/cloud/img/menu/MenuCmcIcon.svg',
+                label: 'Home',
+            },
+            {
+                src: 'https://s2.coinmarketcap.com/static/cloud/img/menu/MenuCmcIcon.svg',
+                label: 'Home',
+            },
+        ],
     },
     { name: 'Gallery', type: 'link' },
     { name: 'Gallery1', type: 'link' },
     {
         name: 'Market Cap',
         type: 'dropdown',
-        items: ['Home', 'office', 'park', 'Family'],
+        items: [
+            {
+                src: 'https://s2.coinmarketcap.com/static/cloud/img/menu/MenuCmcIcon.svg',
+                label: 'Home',
+            },
+            {
+                src: 'https://s2.coinmarketcap.com/static/cloud/img/menu/MenuCmcIcon.svg',
+                label: 'Home',
+            },
+            {
+                src: 'https://s2.coinmarketcap.com/static/cloud/img/menu/MenuCmcIcon.svg',
+                label: 'Home',
+            },
+            {
+                src: 'https://s2.coinmarketcap.com/static/cloud/img/menu/MenuCmcIcon.svg',
+                label: 'Home',
+            },
+        ],
     },
     {
         name: 'Forcast',
         type: 'dropdown',
-        items: ['Home', 'office', 'park', 'Family'],
+        items: [
+            {
+                src: 'https://s2.coinmarketcap.com/static/cloud/img/menu/MenuCmcIcon.svg',
+                label: 'Home',
+            },
+            {
+                src: 'https://s2.coinmarketcap.com/static/cloud/img/menu/MenuCmcIcon.svg',
+                label: 'Home',
+            },
+            {
+                src: 'https://s2.coinmarketcap.com/static/cloud/img/menu/MenuCmcIcon.svg',
+                label: 'Home',
+            },
+            {
+                src: 'https://s2.coinmarketcap.com/static/cloud/img/menu/MenuCmcIcon.svg',
+                label: 'Home',
+            },
+        ],
     },
 ]

@@ -3,6 +3,7 @@ import mobile from '../../pages/mobile'
 import MobileNavbar from './MobileNavbar'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { Menu } from '@headlessui/react'
 
 type Props = {
     param: any
@@ -240,9 +241,34 @@ const Navbar = (props: any) => {
 }
 
 const NavItem = (props: any) => {
+    const [showlist, setlist] = useState(false)
     return (
-        <div>
-            <span className="text-sm font-bold ">{props.data.name}</span>
+        <div
+            className="flex flex-col overflow-hidden "
+            onMouseOver={() => {
+                setlist(true)
+            }}
+            onMouseOut={() => {
+                setlist(false)
+            }}
+        >
+            <span className="text-sm font-bold flex flex-col cursor-pointer hover:text-blue-500 ">
+                {props.data.name}
+            </span>
+            <div
+                className={`  flex flex-col float absolute z-[50] bg-white shadow-2xl px-[25px] gap-[10px] mt-[18px] pb-[16px] rounded-md ${
+                    showlist ? '' : 'hidden'
+                } `}
+            >
+                {' '}
+                {props.data.type == 'dropdown' && (
+                    <>
+                        {props.data.items.map((value: any, index: number) => {
+                            return <a>{value}</a>
+                        })}
+                    </>
+                )}
+            </div>
         </div>
     )
 }
