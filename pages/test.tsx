@@ -1,5 +1,5 @@
 import React from 'react'
-import News from '../components/compo/TrendingSlider/News'
+import News from '../components/component/TrendingSlider/News'
 
 type Props = {}
 
